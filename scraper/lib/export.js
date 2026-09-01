@@ -69,6 +69,8 @@ export function exportJson(db, outDir) {
     location: l.location,
     priceLkr: l.price_lkr,
     priceText: l.price_text,
+    imageUrl: l.image_url,
+    firstSeen: l.first_seen,
     lastSeen: l.last_seen,
   }))
   fs.writeFileSync(path.join(outDir, 'latest-listings.json'), JSON.stringify(latest, null, 1))

@@ -91,7 +91,7 @@ function LiveMarketWatch() {
       </p>
       <div className="steps" style={{ marginBottom: 18 }}>
         <div className="step"><b>{summary.totalActive.toLocaleString('en-LK')}</b><p>active listings tracked (seen ≤ 14 days)</p></div>
-        <div className="step"><b>{Object.keys(summary.bySource).length}</b><p>sources: {Object.entries(summary.bySource).map(([s, n]) => `${s} (${n})`).join(', ')}</p></div>
+        <div className="step"><b>{Object.keys(summary.bySource).length}</b><p>sources: {Object.entries(summary.bySource).map(([s, n]) => `${s.replace('-sample', '')} (${n})`).join(', ')}</p></div>
         <div className="step"><b>{summary.models.length}</b><p>models with live median prices</p></div>
         <div className="step"><b>{summary.priceDrops.length}</b><p>price drops detected since last crawl</p></div>
       </div>

@@ -8,6 +8,7 @@ import Sell from './pages/Sell.jsx'
 import Finance from './pages/Finance.jsx'
 import SafePay from './pages/SafePay.jsx'
 import PriceGuide from './pages/PriceGuide.jsx'
+import MarketFeed from './pages/MarketFeed.jsx'
 import Strategy from './pages/Strategy.jsx'
 
 function ScrollToTop() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/finance" element={<Finance />} />
           <Route path="/safepay" element={<SafePay />} />
           <Route path="/price-guide" element={<PriceGuide />} />
+          <Route path="/market" element={<MarketFeed />} />
           <Route path="/strategy" element={<Strategy />} />
           <Route path="*" element={<Home />} />
         </Routes>

@@ -1,24 +1,39 @@
 {
- "updatedAt": "2026-09-01T09:36:06.005Z",
- "totalActive": 10,
+ "updatedAt": "2026-09-01T09:55:56.171Z",
+ "totalActive": 23,
  "bySource": {
-  "riyasewana": 4,
-  "patpat": 3,
-  "autostream": 3
+  "riyasewana-sample": 6,
+  "patpat-sample": 14,
+  "autostream-sample": 3
  },
  "categories": {
   "vehicles": {
-   "count": 10,
-   "medianPriceLkr": 9800000,
-   "withPrice": 9
+   "count": 12,
+   "medianPriceLkr": 11175000,
+   "withPrice": 12
+  },
+  "property": {
+   "count": 4,
+   "medianPriceLkr": 34125000,
+   "withPrice": 4
+  },
+  "home-living": {
+   "count": 3,
+   "medianPriceLkr": 168000,
+   "withPrice": 3
+  },
+  "electronics": {
+   "count": 4,
+   "medianPriceLkr": 275000,
+   "withPrice": 4
   }
  },
  "models": [
   {
    "key": "toyota-aqua",
    "label": "Toyota Aqua",
-   "count": 1,
-   "medianPriceLkr": 11450000
+   "count": 2,
+   "medianPriceLkr": 11175000
   },
   {
    "key": "suzuki-wagon-r",
@@ -35,58 +50,109 @@
   {
    "key": "toyota-prius",
    "label": "Toyota Prius",
-   "count": 2,
+   "count": 1,
    "medianPriceLkr": 14500000
   },
   {
    "key": "toyota-kdh",
    "label": "Toyota KDH",
    "count": 1,
-   "medianPriceLkr": null
+   "medianPriceLkr": 15900000
   },
   {
    "key": "nissan-leaf",
    "label": "Nissan Leaf",
-   "count": 2,
+   "count": 1,
    "medianPriceLkr": 9800000
   },
   {
    "key": "honda-fit",
    "label": "Honda Fit / GP5",
-   "count": 2,
+   "count": 1,
    "medianPriceLkr": 9250000
   }
  ],
- "priceDrops": [],
+ "priceDrops": [
+  {
+   "title": "3BR Luxury Apartment — Havelock City, Colombo 5",
+   "url": "https://patpat.lk/en#3BR%20Luxury%20Apartment%20%E2%80%94%20Havelock%20City%2C%20Colombo%205",
+   "source": "patpat-sample",
+   "current": 82000000,
+   "previous": 85280000
+  },
+  {
+   "title": "Two-Storey House — 10 Perches, Nugegoda",
+   "url": "https://patpat.lk/en#Two-Storey%20House%20%E2%80%94%2010%20Perches%2C%20Nugegoda",
+   "source": "patpat-sample",
+   "current": 58500000,
+   "previous": 60840000
+  },
+  {
+   "title": "Mitsubishi Montero Sport 2020",
+   "url": "https://www.autostream.lk/#Mitsubishi%20Montero%20Sport%202020",
+   "source": "autostream-sample",
+   "current": 32750000,
+   "previous": 34060000
+  },
+  {
+   "title": "Toyota Hilux Rocco 2021 4x4",
+   "url": "https://riyasewana.com/#Toyota%20Hilux%20Rocco%202021%204x4",
+   "source": "riyasewana-sample",
+   "current": 24500000,
+   "previous": 25480000
+  },
+  {
+   "title": "Toyota KDH 201 Super GL 2016",
+   "url": "https://patpat.lk/en#Toyota%20KDH%20201%20Super%20GL%202016",
+   "source": "patpat-sample",
+   "current": 15900000,
+   "previous": 16536000
+  },
+  {
+   "title": "Toyota Prius 2017 Hybrid",
+   "url": "https://patpat.lk/en#Toyota%20Prius%202017%20Hybrid",
+   "source": "patpat-sample",
+   "current": 14500000,
+   "previous": 15080000
+  },
+  {
+   "title": "Honda Vezel RS Sensing 2018",
+   "url": "https://riyasewana.com/#Honda%20Vezel%20RS%20Sensing%202018",
+   "source": "riyasewana-sample",
+   "current": 13750000,
+   "previous": 14300000
+  },
+  {
+   "title": "Toyota Aqua G Grade 2019",
+   "url": "https://riyasewana.com/#Toyota%20Aqua%20G%20Grade%202019",
+   "source": "riyasewana-sample",
+   "current": 11450000,
+   "previous": 11908000
+  },
+  {
+   "title": "Toyota Aqua S 2018",
+   "url": "https://www.autostream.lk/#Toyota%20Aqua%20S%202018",
+   "source": "autostream-sample",
+   "current": 10900000,
+   "previous": 11336000
+  },
+  {
+   "title": "Nissan Leaf 2018 EV",
+   "url": "https://patpat.lk/en#Nissan%20Leaf%202018%20EV",
+   "source": "patpat-sample",
+   "current": 9800000,
+   "previous": 10192000
+  }
+ ],
  "lastRuns": [
   {
-   "source": "autostream",
-   "started_at": "2026-09-01T09:36:05.975Z",
-   "finished_at": "2026-09-01T09:36:06.005Z",
+   "source": "seed",
+   "started_at": "2026-09-01T09:55:56.157Z",
+   "finished_at": "2026-09-01T09:55:56.170Z",
    "pages": 1,
-   "found": 3,
-   "added": 3,
-   "updated": 0,
-   "status": "ok"
-  },
-  {
-   "source": "patpat",
-   "started_at": "2026-09-01T09:36:05.975Z",
-   "finished_at": "2026-09-01T09:36:06.001Z",
-   "pages": 1,
-   "found": 3,
-   "added": 3,
-   "updated": 0,
-   "status": "ok"
-  },
-  {
-   "source": "riyasewana",
-   "started_at": "2026-09-01T09:36:05.975Z",
-   "finished_at": "2026-09-01T09:36:05.996Z",
-   "pages": 1,
-   "found": 4,
-   "added": 4,
-   "updated": 0,
+   "found": 23,
+   "added": 0,
+   "updated": 23,
    "status": "ok"
   }
  ]

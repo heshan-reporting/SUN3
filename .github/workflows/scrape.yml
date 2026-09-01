@@ -39,6 +39,16 @@ jobs:
         run: npm run scrape:test
       - name: Crawl sources
         run: node scraper/cli.js --max-pages=${{ github.event.inputs.max_pages || 3 }}
+        env:
+          SCRAPE_DEBUG: '1'
+      - name: Upload page snapshots (debug artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: page-snapshots
+          path: data/debug/
+          if-no-files-found: ignore
+          retention-days: 5
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"

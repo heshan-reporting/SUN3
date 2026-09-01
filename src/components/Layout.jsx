@@ -50,6 +50,7 @@ export function Header() {
               </NavLink>
             ))}
             <NavLink to="/price-guide" className={({ isActive }) => (isActive ? 'active' : '')}>📊 Price Guide</NavLink>
+            <NavLink to="/market" className={({ isActive }) => (isActive ? 'active' : '')}>📡 Live Feed</NavLink>
             <NavLink to="/strategy" className={({ isActive }) => (isActive ? 'active' : '')}>🧭 Strategy</NavLink>
           </div>
         </nav>
