@@ -1,0 +1,93 @@
+{
+ "updatedAt": "2026-09-01T09:36:06.005Z",
+ "totalActive": 10,
+ "bySource": {
+  "riyasewana": 4,
+  "patpat": 3,
+  "autostream": 3
+ },
+ "categories": {
+  "vehicles": {
+   "count": 10,
+   "medianPriceLkr": 9800000,
+   "withPrice": 9
+  }
+ },
+ "models": [
+  {
+   "key": "toyota-aqua",
+   "label": "Toyota Aqua",
+   "count": 1,
+   "medianPriceLkr": 11450000
+  },
+  {
+   "key": "suzuki-wagon-r",
+   "label": "Suzuki Wagon R",
+   "count": 1,
+   "medianPriceLkr": 6850000
+  },
+  {
+   "key": "honda-vezel",
+   "label": "Honda Vezel",
+   "count": 1,
+   "medianPriceLkr": 13750000
+  },
+  {
+   "key": "toyota-prius",
+   "label": "Toyota Prius",
+   "count": 2,
+   "medianPriceLkr": 14500000
+  },
+  {
+   "key": "toyota-kdh",
+   "label": "Toyota KDH",
+   "count": 1,
+   "medianPriceLkr": null
+  },
+  {
+   "key": "nissan-leaf",
+   "label": "Nissan Leaf",
+   "count": 2,
+   "medianPriceLkr": 9800000
+  },
+  {
+   "key": "honda-fit",
+   "label": "Honda Fit / GP5",
+   "count": 2,
+   "medianPriceLkr": 9250000
+  }
+ ],
+ "priceDrops": [],
+ "lastRuns": [
+  {
+   "source": "autostream",
+   "started_at": "2026-09-01T09:36:05.975Z",
+   "finished_at": "2026-09-01T09:36:06.005Z",
+   "pages": 1,
+   "found": 3,
+   "added": 3,
+   "updated": 0,
+   "status": "ok"
+  },
+  {
+   "source": "patpat",
+   "started_at": "2026-09-01T09:36:05.975Z",
+   "finished_at": "2026-09-01T09:36:06.001Z",
+   "pages": 1,
+   "found": 3,
+   "added": 3,
+   "updated": 0,
+   "status": "ok"
+  },
+  {
+   "source": "riyasewana",
+   "started_at": "2026-09-01T09:36:05.975Z",
+   "finished_at": "2026-09-01T09:36:05.996Z",
+   "pages": 1,
+   "found": 4,
+   "added": 4,
+   "updated": 0,
+   "status": "ok"
+  }
+ ]
+}
