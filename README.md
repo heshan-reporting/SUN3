@@ -13,6 +13,8 @@ vehicle rentals, property, home & living, and electronics** — built around one
 | `docs/research/sri-lanka-competitors.md` | Deep research on patpat.lk, autostream.lk, ikman.lk, riyasewana, LankaPropertyWeb, Facebook Marketplace — with cited gaps & pricing |
 | `docs/research/international-platforms.md` | Feature & revenue-model research on Carvana, CarGurus, Auto Trader, Encar, Cars24/Spinny, Turo, Zillow, Rightmove, PropertyGuru, Back Market, Vinted, Mercari, OLX, Carousell, Jiji |
 | `docs/research/market-context.md` | Sri Lanka 2026 macro: vehicle import boom, payments (LankaQR/CEFTS), trust environment, languages, competitor funding |
+| `scraper/` | Automated market-data crawler: robots.txt-aware, rate-limited, per-site adapters (riyasewana + generic JSON-LD), SQLite DB with price history (`data/market.db`), JSON exports for the site (`public/data/`), offline fixtures & tests — see [`docs/scraper.md`](docs/scraper.md) |
+| `.github/workflows/scrape.yml` | Scheduled workflow (every 6h on `main`) that runs the crawler and commits updated data — which auto-redeploys the site |
 | `.github/workflows/static.yml` | GitHub Actions workflow that builds the app and deploys `dist/` to GitHub Pages on push to `main` |
 | `legacy/ads-ai-brain.html` | The demo page that previously lived at the repo root (preserved) |
 
@@ -23,6 +25,10 @@ npm install
 npm run dev      # dev server
 npm run build    # production build → dist/
 npm run preview  # serve the production build
+
+npm run scrape:test      # scraper unit tests (offline)
+npm run scrape:fixtures  # full scrape pipeline against local fixtures
+npm run scrape           # live crawl (respects robots.txt + rate limits)
 ```
 
 ## Static or dynamic? (short answer)

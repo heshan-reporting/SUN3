@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useMarketData, timeAgo } from '../lib/marketData.js'
+import { formatLKR } from '../data/listings.js'
 
 // 18 months of demo index data (Rs M): median asking price vs verified sale
 // price for a Toyota Aqua 2019 on CeylonHub. Illustrative only.
@@ -76,6 +78,66 @@ function PriceChart() {
   )
 }
 
+function LiveMarketWatch() {
+  const { summary, latest, error } = useMarketData()
+  if (error || !summary) return null
+  return (
+    <>
+      <h2>🔴 Live market watch <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--ink-500)' }}>
+        — auto-scraped from public listing sites · updated {timeAgo(summary.updatedAt)}</span></h2>
+      <p style={{ marginBottom: 12 }}>
+        CeylonHub's crawler polls public Sri Lankan listing sites every 6 hours (respecting robots.txt and
+        rate limits), stores everything in a price-history database, and refreshes these figures automatically.
+      </p>
+      <div className="steps" style={{ marginBottom: 18 }}>
+        <div className="step"><b>{summary.totalActive.toLocaleString('en-LK')}</b><p>active listings tracked (seen ≤ 14 days)</p></div>
+        <div className="step"><b>{Object.keys(summary.bySource).length}</b><p>sources: {Object.entries(summary.bySource).map(([s, n]) => `${s} (${n})`).join(', ')}</p></div>
+        <div className="step"><b>{summary.models.length}</b><p>models with live median prices</p></div>
+        <div className="step"><b>{summary.priceDrops.length}</b><p>price drops detected since last crawl</p></div>
+      </div>
+      {summary.models.length > 0 && (
+        <div className="table-wrap">
+          <table>
+            <thead><tr><th>Model (live)</th><th>Listings tracked</th><th>Median asking price</th></tr></thead>
+            <tbody>
+              {summary.models.map((m) => (
+                <tr key={m.key}>
+                  <td><b>{m.label}</b></td>
+                  <td>{m.count}</td>
+                  <td>{m.medianPriceLkr ? formatLKR(m.medianPriceLkr) : '—'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {latest && latest.length > 0 && (
+        <>
+          <h3>Latest scraped listings</h3>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Listing</th><th>Source</th><th>Price</th></tr></thead>
+              <tbody>
+                {latest.slice(0, 8).map((l) => (
+                  <tr key={l.url}>
+                    <td><a href={l.url} target="_blank" rel="noreferrer" style={{ color: 'var(--teal-700)', fontWeight: 600 }}>{l.title}</a>{l.location ? ` · ${l.location}` : ''}</td>
+                    <td>{l.source}</td>
+                    <td>{l.priceLkr ? formatLKR(l.priceLkr) : l.priceText || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{ fontSize: 12.5, color: 'var(--ink-500)' }}>
+            Data aggregated from public pages for market-index purposes; links go to the original ads on the
+            source site. See <code>docs/scraper.md</code> for methodology and compliance notes.
+          </p>
+        </>
+      )}
+    </>
+  )
+}
+
 export default function PriceGuide() {
   return (
     <div className="container section doc">
@@ -100,6 +162,8 @@ export default function PriceGuide() {
           verified sale line, so you negotiate from reality.
         </p>
       </div>
+
+      <LiveMarketWatch />
 
       <h2>Fair price ranges — popular models</h2>
       <div className="table-wrap">

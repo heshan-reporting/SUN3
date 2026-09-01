@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head><title>Vehicle listings - fixture</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Car",
+        "name": "Toyota Prius 2017 Hybrid",
+        "url": "/vehicle/toyota-prius-2017-98765",
+        "image": "/img/prius.jpg",
+        "offers": { "@type": "Offer", "price": "14500000", "priceCurrency": "LKR" }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "Nissan Leaf 2018 EV",
+        "url": "/vehicle/nissan-leaf-2018-87654",
+        "offers": { "@type": "Offer", "price": "9800000", "priceCurrency": "LKR" }
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="cards">
+  <article>
+    <a href="/vehicle/honda-fit-gp5-2015-76543"><h3>Honda Fit GP5 2015</h3></a>
+    <span class="price">Rs. 9,250,000</span>
+    <img src="/img/fit.jpg" />
+  </article>
+  <article>
+    <a href="/vehicle/toyota-aqua-2018-65432"><h3>Toyota Aqua 2018 G Grade</h3></a>
+    <span class="price">Rs 10.9M</span>
+  </article>
+</div>
+<a rel="next" href="/vehicles/?page=2">More</a>
+</body></html>

@@ -1,0 +1,112 @@
+[
+ {
+  "source": "riyasewana",
+  "url": "https://riyasewana.com/buy/toyota-aqua-2019-colombo-1234567",
+  "title": "Toyota Aqua 2019",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": "Colombo",
+  "priceLkr": 11450000,
+  "priceText": "Rs. 11,450,000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "riyasewana",
+  "url": "https://riyasewana.com/buy/suzuki-wagon-r-fx-2018-gampaha-2345678",
+  "title": "Suzuki Wagon R FX 2018",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": "Gampaha",
+  "priceLkr": 6850000,
+  "priceText": "Rs. 6,850,000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "riyasewana",
+  "url": "https://riyasewana.com/buy/honda-vezel-rs-2018-kandy-3456789",
+  "title": "Honda Vezel RS 2018",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": "Kandy",
+  "priceLkr": 13750000,
+  "priceText": "Rs. 13,750,000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "riyasewana",
+  "url": "https://riyasewana.com/buy/toyota-kdh-201-2016-negombo-4567890",
+  "title": "Toyota KDH 201 2016",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": "Negombo",
+  "priceLkr": null,
+  "priceText": "Negotiable",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "patpat",
+  "url": "https://patpat.lk/vehicle/toyota-prius-2017-98765",
+  "title": "Toyota Prius 2017 Hybrid",
+  "category": "vehicles",
+  "subcategory": null,
+  "location": null,
+  "priceLkr": 14500000,
+  "priceText": "Rs 14500000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "patpat",
+  "url": "https://patpat.lk/vehicle/nissan-leaf-2018-87654",
+  "title": "Nissan Leaf 2018 EV",
+  "category": "vehicles",
+  "subcategory": null,
+  "location": null,
+  "priceLkr": 9800000,
+  "priceText": "Rs 9800000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "patpat",
+  "url": "https://patpat.lk/vehicle/honda-fit-gp5-2015-76543",
+  "title": "Honda Fit GP5 2015",
+  "category": "vehicles",
+  "subcategory": null,
+  "location": null,
+  "priceLkr": 9250000,
+  "priceText": "Rs. 9,250,000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "autostream",
+  "url": "https://www.autostream.lk/vehicle/toyota-prius-2017-98765",
+  "title": "Toyota Prius 2017 Hybrid",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": null,
+  "priceLkr": 14500000,
+  "priceText": "Rs 14500000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "autostream",
+  "url": "https://www.autostream.lk/vehicle/nissan-leaf-2018-87654",
+  "title": "Nissan Leaf 2018 EV",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": null,
+  "priceLkr": 9800000,
+  "priceText": "Rs 9800000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ },
+ {
+  "source": "autostream",
+  "url": "https://www.autostream.lk/vehicle/honda-fit-gp5-2015-76543",
+  "title": "Honda Fit GP5 2015",
+  "category": "vehicles",
+  "subcategory": "car",
+  "location": null,
+  "priceLkr": 9250000,
+  "priceText": "Rs. 9,250,000",
+  "lastSeen": "2026-09-01T09:36:05.975Z"
+ }
+]
