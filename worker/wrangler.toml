@@ -1,0 +1,19 @@
+name = "ceylonhub-scraper"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Cron trigger: run the crawl every 6 hours. Cloudflare invokes scheduled().
+[triggers]
+crons = ["17 1,7,13,19 * * *"]
+
+# D1 (SQLite) database binding. Create it once with:
+#   npx wrangler d1 create ceylonhub
+# then paste the returned database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "ceylonhub"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[vars]
+# Comma-separated origins allowed to call the JSON API (your Pages site).
+ALLOWED_ORIGIN = "https://heshan-reporting.github.io"
