@@ -32,7 +32,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build
+        # Set repo variable MARKET_API_URL (Settings → Secrets and variables →
+        # Actions → Variables) to your deployed Worker URL to make the Live Feed
+        # read live D1 data. Unset → the site uses the committed static JSON.
         run: npm run build
+        env:
+          VITE_MARKET_API: ${{ vars.MARKET_API_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

@@ -65,6 +65,20 @@ VITE_MARKET_API="https://ceylonhub-scraper.<your-subdomain>.workers.dev" npm run
 (No env var → the site keeps using the committed `public/data/*.json`, so
 nothing breaks if the Worker isn't deployed.)
 
+## CI automation (already wired)
+
+- **`.github/workflows/deploy-worker.yml`** auto-deploys this Worker whenever
+  `worker/**` changes on `main`. Add two repo **secrets** first:
+  `CLOUDFLARE_API_TOKEN` (Edit Workers + D1) and `CLOUDFLARE_ACCOUNT_ID`.
+  Without them the job skips cleanly (no failed builds). You still do the
+  one-time D1 create + `schema.sql` apply locally (steps above), because that
+  provisions state the token alone shouldn't guess.
+- **`.github/workflows/static.yml`** passes repo **variable** `MARKET_API_URL`
+  into the site build as `VITE_MARKET_API`. Set it (Settings → Secrets and
+  variables → Actions → **Variables**) to your deployed Worker URL and the next
+  Pages deploy makes the Live Feed read live D1 data. Leave it unset to keep the
+  committed static JSON.
+
 ## Notes
 
 - The parser is dependency-free (native `HTMLRewriter` + JSON-LD extraction),
