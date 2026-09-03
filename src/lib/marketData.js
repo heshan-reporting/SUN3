@@ -8,9 +8,14 @@ export function useMarketData() {
   useEffect(() => {
     let alive = true
     const base = import.meta.env.BASE_URL
+    // If a live Worker API is configured (VITE_MARKET_API=https://<worker>.workers.dev),
+    // read live rows from D1; otherwise fall back to the committed static JSON.
+    const api = import.meta.env.VITE_MARKET_API
+    const summaryUrl = api ? `${api}/api/market-summary` : `${base}data/market-summary.json`
+    const latestUrl = api ? `${api}/api/latest-listings` : `${base}data/latest-listings.json`
     Promise.all([
-      fetch(`${base}data/market-summary.json`).then((r) => (r.ok ? r.json() : Promise.reject(r.status))),
-      fetch(`${base}data/latest-listings.json`).then((r) => (r.ok ? r.json() : Promise.reject(r.status))),
+      fetch(summaryUrl).then((r) => (r.ok ? r.json() : Promise.reject(r.status))),
+      fetch(latestUrl).then((r) => (r.ok ? r.json() : Promise.reject(r.status))),
     ])
       .then(([summary, latest]) => alive && setState({ summary, latest, error: null }))
       .catch((e) => alive && setState({ summary: null, latest: null, error: String(e) }))

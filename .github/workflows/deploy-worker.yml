@@ -1,0 +1,49 @@
+# Auto-deploy the Cloudflare scraper Worker when worker/ changes on main.
+#
+# Required repo secrets (Settings → Secrets and variables → Actions → Secrets):
+#   CLOUDFLARE_API_TOKEN   — a token with "Edit Cloudflare Workers" + D1 permissions
+#   CLOUDFLARE_ACCOUNT_ID  — your Cloudflare account id
+#
+# One-time before the first deploy (locally): create the D1 database and paste
+# its id into worker/wrangler.toml, then apply worker/schema.sql. See worker/README.md.
+name: Deploy Worker
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "worker/**"
+      - ".github/workflows/deploy-worker.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Guard — skip if Cloudflare secrets are absent
+        id: guard
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "No CLOUDFLARE_API_TOKEN secret set — skipping Worker deploy."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install & deploy
+        if: steps.guard.outputs.skip == 'false'
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          npm install
+          npx wrangler deploy

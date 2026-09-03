@@ -1,0 +1,16 @@
+{
+  "name": "ceylonhub-scraper-worker",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Cloudflare Worker: cron-scheduled market crawler + D1 database + JSON API for CeylonHub",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:init": "wrangler d1 execute ceylonhub --file=./schema.sql --remote",
+    "db:init-local": "wrangler d1 execute ceylonhub --file=./schema.sql --local",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
